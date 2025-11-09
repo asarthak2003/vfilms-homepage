@@ -193,31 +193,34 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
 5. Click "Deploy"
 
 
+---
 
 ## 📸 Screenshots
 
 ### Desktop View
-```
-https://drive.google.com/file/d/1_gFz4rQlm95SawlEeWVed5JFRkkMfJrk/view?usp=drive_link
 
-https://drive.google.com/file/d/1_Nii4aHVsylXzKdRCwg0Apa4cQ13s_kJ/view?usp=drive_link
+<div align="center">
 
-https://drive.google.com/file/d/12UEOGpP1O15OYCns4JI3HuNNB77H-gRm/view?usp=drive_link
+<img src="https://drive.google.com/uc?export=view&id=1_gFz4rQlm95SawlEeWVed5JFRkkMfJrk" alt="Desktop View 1" width="800"/>
 
-```
+<img src="https://drive.google.com/uc?export=view&id=1_Nii4aHVsylXzKdRCwg0Apa4cQ13s_kJ" alt="Desktop View 2" width="800"/>
+
+<img src="https://drive.google.com/uc?export=view&id=12UEOGpP1O15OYCns4JI3HuNNB77H-gRm" alt="Desktop View 3" width="800"/>
+
+</div>
 
 ### Mobile View
-```
-https://drive.google.com/file/d/1WpIcyCnXRxjssOQBegrdwZGw0Y8yBTaY/view?usp=drive_link
 
-https://drive.google.com/file/d/1kZuLyowLfXL6Qdt1lhiCx_vKYopx6zwI/view?usp=drive_link
+<div align="center">
 
-https://drive.google.com/file/d/1bDU5oVEbEw0qzSI_j7RSqhll6BxC7PXp/view?usp=drive_link
+<img src="https://drive.google.com/uc?export=view&id=1WpIcyCnXRxjssOQBegrdwZGw0Y8yBTaY" alt="Mobile View 1" width="300"/>
+<img src="https://drive.google.com/uc?export=view&id=1kZuLyowLfXL6Qdt1lhiCx_vKYopx6zwI" alt="Mobile View 2" width="300"/>
+<img src="https://drive.google.com/uc?export=view&id=1bDU5oVEbEw0qzSI_j7RSqhll6BxC7PXp" alt="Mobile View 3" width="300"/>
 
-```
+</div>
+
 
 ---
-
 
 ## 👤 Contact
 
