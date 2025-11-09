@@ -5,6 +5,7 @@
 **A modern, responsive single-page web application for VFilms - Film Production, Branding, and Art Curation company.**
 
 </div>
+
 ---
 
 ## 📋 Table of Contents
@@ -14,6 +15,7 @@
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
 - [API Integration](#api-integration)
+- [API Integration & Testing](#api-integration--testing)
 - [Deployment](#deployment)
 - [Screenshots](#screenshots)
 - [Contact](#contact)
@@ -111,7 +113,6 @@ vfilms-homepage/
 └── README.md                 # Project documentation
 ```
 
-
 ---
 
 ## 🔌 API Integration
@@ -165,9 +166,9 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
- "name": "Sarthak Agrawal",
-  "email": "asarthak2003@gmail.com",
-  "phone": "9876543210",
+    name: "Sarthak Agrawal",
+    email: "asarthak2003@gmail.com",
+    phone: "9876543210",
     message: "Test message"
   })
 })
@@ -175,6 +176,161 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
 .then(data => console.log('Success:', data))
 .catch(error => console.error('Error:', error));
 ```
+
+---
+
+## 🧪 API Integration & Testing
+
+### Live API Response Demo
+
+The contact form successfully integrates with the Django REST Framework backend and returns structured JSON responses with email notifications.
+
+<div align="center">
+
+### ✅ Successful Submission Response
+
+<img src="https://drive.google.com/file/d/1ECvWcktcpm718TkUpvGrFykIFzyvsFpS/view?usp=drive_link" alt="API Success Response - Django REST Framework" width="900"/>
+
+*Django REST Framework showing successful form submission with automatic email confirmation*
+
+</div>
+
+### Response Structure
+
+**Success Response (HTTP 201 Created):**
+```json
+{
+  "message": "Contact request submitted and email sent successfully",
+  "data": {
+    "id": 4191,
+    "name": "Sarthak Agrawal",
+    "email": "asarthak2003@gmail.com",
+    "phone": "908765498",
+    "message": "This is a message",
+    "created_at": "2025-11-09T08:19:23.725470Z",
+    "updated_at": "2025-11-09T08:19:23.725488Z"
+  }
+}
+```
+
+### API Features
+
+- ✅ **Automatic Email Notifications** - Confirmation sent to submitted email address
+- ✅ **Timestamp Tracking** - Records creation and update timestamps
+- ✅ **Unique ID Generation** - Each submission receives a unique identifier
+- ✅ **Data Validation** - Server-side validation for all required fields
+- ✅ **JSON Response Format** - Structured data following REST API standards
+- ✅ **HTTP Status Codes** - Proper REST conventions (201 Created, 400 Bad Request, etc.)
+- ✅ **CORS Enabled** - Cross-Origin Resource Sharing configured for frontend access
+
+### Testing Methods
+
+#### 1. Using cURL (Command Line)
+```bash
+curl -X POST https://vernanbackend.ezlab.in/api/contact-us/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Test User",
+    "email": "test@example.com",
+    "phone": "1234567890",
+    "message": "This is a test message"
+  }'
+```
+
+#### 2. Using JavaScript Fetch API
+```javascript
+const submitForm = async () => {
+  try {
+    const response = await fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: "Your Name",
+        email: "your@email.com",
+        phone: "1234567890",
+        message: "Your message"
+      })
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log('Success:', data);
+    } else {
+      console.error('Error:', response.status);
+    }
+  } catch (error) {
+    console.error('Network Error:', error);
+  }
+};
+```
+
+#### 3. Using Postman
+1. **Method:** `POST`
+2. **URL:** `https://vernanbackend.ezlab.in/api/contact-us/`
+3. **Headers:** 
+   - Key: `Content-Type`
+   - Value: `application/json`
+4. **Body (raw JSON):**
+```json
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "phone": "9876543210",
+  "message": "Testing API with Postman"
+}
+```
+
+### Form Validation Rules
+
+The API enforces the following validation:
+
+| Field | Validation Rules |
+|-------|-----------------|
+| **name** | Required, non-empty string |
+| **email** | Required, valid email format |
+| **phone** | Required, 10-digit number |
+| **message** | Required, non-empty string |
+
+### Error Handling
+
+The application gracefully handles various error scenarios:
+
+**Validation Errors (HTTP 400 Bad Request):**
+```json
+{
+  "status": "error",
+  "errors": {
+    "email": ["Enter a valid email address."],
+    "phone": ["Phone number must be 10 digits."]
+  }
+}
+```
+
+**Server Errors (HTTP 500 Internal Server Error):**
+```json
+{
+  "status": "error",
+  "message": "Internal server error. Please try again later."
+}
+```
+
+**Network Errors:**
+- Display user-friendly error message
+- Suggest checking internet connection
+- Provide retry option
+
+### Frontend Implementation
+
+The contact form in `VFilmsHomepage.jsx` implements:
+
+✅ **Client-side Validation** - Real-time input validation before API call  
+✅ **Error Display** - User-friendly error messages for each field  
+✅ **Success Feedback** - Green success banner with checkmark icon  
+✅ **Loading States** - Disabled button with "Submitting..." text during API call  
+✅ **Form Reset** - Automatic form clearing after successful submission  
+✅ **Error Recovery** - Clears previous errors when user corrects input  
 
 ---
 
@@ -191,7 +347,6 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
    - Build Command: `npm run build`
    - Output Directory: `dist`
 5. Click "Deploy"
-
 
 ---
 
@@ -219,7 +374,6 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
 
 </div>
 
-
 ---
 
 ## 👤 Contact
@@ -228,3 +382,11 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
 
 - GitHub: [@asarthak2003](https://github.com/asarthak2003)
 - Email: asarthak2003@gmail.com
+
+---
+
+<div align="center">
+
+**Made with ❤️ by Sarthak Agrawal**
+
+</div>
