@@ -160,19 +160,21 @@ vfilms-homepage/
 ### Testing the API
 
 **Using JavaScript (Browser Console):**
+```javascript
 fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    "name": "Sarthak Agrawal",
-    "email": "asarthak2003@gmail.com",
-    "phone": "9876543210",
+    name: "Test User",
+    email: "test@example.com",
+    phone: "9876543210",
     message: "Test message"
   })
 })
 .then(r => r.json())
 .then(data => console.log('Success:', data))
 .catch(error => console.error('Error:', error));
+```
 
 ---
 
