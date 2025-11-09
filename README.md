@@ -165,9 +165,9 @@ fetch('https://vernanbackend.ezlab.in/api/contact-us/', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    name: "Test User",
-    email: "test@example.com",
-    phone: "9876543210",
+ "name": "Sarthak Agrawal",
+  "email": "asarthak2003@gmail.com",
+  "phone": "9876543210",
     message: "Test message"
   })
 })
