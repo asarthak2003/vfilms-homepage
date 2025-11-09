@@ -189,7 +189,7 @@ The contact form successfully integrates with the Django REST Framework backend 
 
 ### ✅ Successful Submission Response
 
-<img src="https://drive.google.com/file/d/1ECvWcktcpm718TkUpvGrFykIFzyvsFpS/view?usp=drive_link" alt="API Success Response - Django REST Framework" width="900"/>
+<img src="https://drive.google.com/uc?export=view&id=1ECvWcktcpm718TkUpvGrFykIFzyvsFpS" alt="API Success Response - Django REST Framework" width="900"/>
 
 *Django REST Framework showing successful form submission with automatic email confirmation*
 
